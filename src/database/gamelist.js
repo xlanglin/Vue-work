@@ -1,0 +1,69 @@
+export default [
+    {
+        id:"1",
+        images:"https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/D8mYIXWja8knuqYlwqcqVpi1.jpg",
+        type:"動作遊戲",
+        name:"艾爾登法環",
+        slogan:"上市首週突破千萬大作",
+        price:"1290",
+        link:"",
+    },
+    {
+        id:"2",
+        images:"https://assets.nintendo.com/image/upload/ar_16:9,b_auto,c_pad,dpr_3.0,f_auto,q_auto,w_500/b_rgb:ffffff/v1/ncom/en_US/games/switch/p/pokemon-legends-arceus-switch/hero",
+        type:"角色扮演",
+        name:"寶可夢-阿爾宙斯",
+        slogan:"寶可夢首次開放世界",
+        price:"1590",
+        link:"",
+    },
+    {
+        id:"3",
+        images:"https://cdn1.dotesports.com/wp-content/uploads/2022/03/03193046/kirbycik.jpg",
+        type:"動作遊戲",
+        name:"星之卡比-探索發現",
+        slogan:"粉紅小惡魔再次踏上旅途",
+        price:"1590",
+        link:"",
+    },
+    {
+        id:"4",
+        images:"https://p2.bahamut.com.tw/B/2KU/89/c919928141dbcdb8149fffc9961dm995.JPG?v=1631272861825",
+        type:"動作遊戲",
+        name:"戰神-諸神黃昏",
+        slogan:"極度好評戰神續作",
+        price:"1790",
+        link:"",
+    },
+    {
+        id:"5",
+        images:"https://i.ytimg.com/vi/5n6rVoeqFaM/maxresdefault.jpg",
+        type:"角色扮演",
+        name:"寶可夢 朱/紫",
+        slogan:"每年不可或缺的寶可夢新作",
+        price:"1690",
+        link:"",
+    },
+    {
+        id:"6",
+        images:"https://i.ytimg.com/vi/h-VFqwzNHgo/maxresdefault.jpg",
+        type:"益智遊戲",
+        name:"魔法氣泡2",
+        slogan:"魔法氣泡&俄羅斯方塊強強聯手",
+        price:"690",
+        link:"",
+    },
+    {
+        id:"7",
+        images:"https://uc.udn.com.tw/photo/2021/04/16/1/12105220.jpg",
+        type:"益智遊戲",
+        name:"雙人成行",
+        slogan:"榮獲2021年最佳遊戲",
+        price:"990",
+        link:"",
+    },
+    
+]
+
+
+
