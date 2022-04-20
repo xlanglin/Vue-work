@@ -111,11 +111,13 @@
 
 <script>
 import {mapGetters} from 'vuex'
+import iconCart from '@/assets/icons/shoppingcart.png'
 export default {
   name: "App",
   data() {
     return {
       Email: "",
+      icon: iconCart
     };
   },
   computed :{
