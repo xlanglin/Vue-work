@@ -273,4 +273,7 @@ a {
   text-align: center;
   margin-bottom: 1rem;
 }
+.el-link.el-link--primary{
+  color: white;
+}
 </style>
