@@ -3,39 +3,35 @@
     <div class="shoppingCart">
       <h2>我的購物車</h2>
       <ul>
-        <li>
-          <img
-            class="gameimg"
-            src="https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/D8mYIXWja8knuqYlwqcqVpi1.jpg"
-            alt=""
-          />
-          <div class="name">艾爾登法環</div>
-          <div class="number">
-            <el-input-number
-              v-model="num"
-              @change="handleChange"
-              :min="1"
-              :max="5"
-              label="數量"
-            ></el-input-number>
-          </div>
-          <div class="price">NT$1200元</div>
-          <div class="SumPrice">共1200元</div>
-          <a href="#" class="delete">刪除</a>
+        <li v-for="(items, index) in cartProducts" :key="index">
+          <img class="gameimg" :src="items.images" alt="" />
+          <div class="name">{{ items.name }}</div>
+          <div class="price">NT${{ items.price }}元</div>
+          <div class="number">{{items.num}}個</div>
+          <div class="SumPrice">共{{ items.sum }}元</div>
+          <a href="#" class="delete" @click="deleteItems(items)">刪除</a>
         </li>
       </ul>
-      <div class="TotalPrice">總共:1200元</div>
+      <div class="TotalPrice">總共:{{ totalPrice }}</div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters, mapMutations } from "vuex";
 export default {
   name: "about",
+  computed: {
+    ...mapState("cart", ["cartProducts"]),
+    ...mapGetters("cart", ["totalCount", "totalPrice"]),
+  },
   data() {
     return {
       num: "0",
     };
+  },
+  methods: {
+    ...mapMutations("cart", ["deleteItems"]),
   },
 };
 </script>
@@ -89,8 +85,10 @@ a {
 .price,
 .delete,
 .SumPrice {
-  margin-right: 1rem;
+  text-align: center;
   font-size: 24px;
+  width: 100%;
+
 }
 .delete {
   text-decoration: none;
@@ -99,10 +97,9 @@ a {
 .delete:hover {
   color: red;
 }
-.TotalPrice{
+.TotalPrice {
   font-size: 30px;
   margin-top: 1rem;
   text-align: right;
 }
-
 </style>

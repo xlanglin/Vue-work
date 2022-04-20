@@ -46,7 +46,7 @@
           <li class="menu-item">
             <a href="#/cart" class="shoppingCar" @click="toTop"
               ><i class="el-icon-shopping-cart-1"></i
-            ></a>
+            ><span class="count" v-if="totalCount">{{totalCount}}</span></a>
           </li>
         </ul>
       </div>
@@ -110,12 +110,16 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: "App",
   data() {
     return {
       Email: "",
     };
+  },
+  computed :{
+    ...mapGetters('cart',['totalCount'])
   },
   methods: {
     toTop(e) {
@@ -137,6 +141,7 @@ export default {
         }
       });
     },
+    
   },
 };
 </script>
@@ -371,9 +376,20 @@ table {
 .shoppingCar {
   padding: 1rem;
   font-size: 30px;
+  position: relative;
 }
 .shoppingCar:hover {
   color: white;
+}
+.count{
+  position: absolute;
+  top: 10px;
+  right: -5px;
+  font-size: 14px;
+  background: red;
+  color: white;
+  border-radius: 100%;
+  padding: 3px;
 }
 .footer {
   margin-top: 5px;

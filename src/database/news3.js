@@ -1,6 +1,6 @@
 export default {
     id: "3",
-    images: "https://img.4gamers.com.tw/ckfinder/images/ALIEN/2022-3/FN5aqbIacAIXlLV.jpg?versionId=YO537qTbOXn.DrNaXpkB41Ex4_uhQXx7",
+    images: "https://img.4gamers.com.tw/puku-clone-version/9f5f0325c8c7212c20639cd6a67abb6043fd81da.JPG",
     name: "實測《樂園的異鄉人Final Fantasy起源》集結《FF》歷代職業、地圖，手起刀落的動作新嘗試",
     date: "2022年3月18日",
     intro: "由 Square Enix 攜手光榮特庫摩《忍者外傳》Team NINJA 打造的《樂園異鄉人 Final Fantasy 起源》即將於 3 月 18 日推出",

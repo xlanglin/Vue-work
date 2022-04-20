@@ -6,6 +6,7 @@ export default [
         name:"艾爾登法環",
         slogan:"上市首週突破千萬大作",
         price:"1290",
+        num: "0",
         link:"",
     },
     {
@@ -15,6 +16,7 @@ export default [
         name:"寶可夢-阿爾宙斯",
         slogan:"寶可夢首次開放世界",
         price:"1590",
+        num: "0",
         link:"",
     },
     {
@@ -24,6 +26,7 @@ export default [
         name:"星之卡比-探索發現",
         slogan:"粉紅小惡魔再次踏上旅途",
         price:"1590",
+        num: "0",
         link:"",
     },
     {
@@ -33,6 +36,7 @@ export default [
         name:"戰神-諸神黃昏",
         slogan:"極度好評戰神續作",
         price:"1790",
+        num: "0",
         link:"",
     },
     {
@@ -42,6 +46,7 @@ export default [
         name:"寶可夢 朱/紫",
         slogan:"每年不可或缺的寶可夢新作",
         price:"1690",
+        num: "0",
         link:"",
     },
     {
@@ -51,6 +56,7 @@ export default [
         name:"魔法氣泡2",
         slogan:"魔法氣泡&俄羅斯方塊強強聯手",
         price:"690",
+        num: "0",
         link:"",
     },
     {
@@ -60,6 +66,7 @@ export default [
         name:"雙人成行",
         slogan:"榮獲2021年最佳遊戲",
         price:"990",
+        num: "0",
         link:"",
     },
     

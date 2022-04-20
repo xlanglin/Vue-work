@@ -1,4 +1,4 @@
-<template>
+<template >
   <div class="Game">
     <div class="banner">
       <h2>遊戲列表</h2>
@@ -31,7 +31,10 @@
       <div class="gameMenu">
         <ul>
           <li
-            v-for="(item, index) in game.slice(PageStart, PageStart + pagesize)"
+            v-for="(item, index) in game.slice(
+              PageStart,
+              PageStart + pagesize
+            )"
             :key="index"
           >
             <a :href="'#/game/' + item.id" class="gameDetail" @click="toTop">
@@ -48,13 +51,14 @@
               <div class="gamePrice p-d">NT${{ item.price }}</div>
               <div class="gameLink p-d"></div>
             </a>
-            <el-link
-              type="primary"
-              :underline="false"
-              class="gameShopping"
-              icon="el-icon-shopping-cart-2"
-              >加入購物車
-            </el-link>
+              <el-link
+                type="primary"
+                :underline="false"
+                class="gameShopping"
+                icon="el-icon-shopping-cart-2"
+                @click="addToCart(item)"
+                >加入購物車
+              </el-link>
           </li>
         </ul>
       </div>
@@ -72,10 +76,12 @@
 
 <script>
 import gameList from "@/database/gamelist";
+import { mapState, mapActions, mapMutations } from "vuex";
 export default {
   name: "game",
+
   mounted() {
-    this.game = gameList;
+    this.game = this.allProduct;
   },
   data() {
     return {
@@ -94,8 +100,11 @@ export default {
     TotalPage() {
       return Math.ceil(this.game.length / this.pagesize);
     },
+    ...mapState("product", ["allProduct"]),
   },
   methods: {
+    ...mapActions("product", ["GetProducts"]),
+    ...mapMutations("cart", ["addToCart"]),
     setPage(idx) {
       if (idx <= 0 || idx > this.TotalPage) {
         return;
@@ -118,6 +127,9 @@ export default {
         vm.game = gameList;
       }
     },
+  },
+  created() {
+    this.GetProducts();
   },
 };
 </script>
@@ -211,7 +223,7 @@ a {
   transition: all 0.3s;
 }
 .gameMenu li:hover {
-  max-width: 31%;
+  transform: translateY(-5px);
   box-shadow: 1px 8px 20px grey;
 }
 

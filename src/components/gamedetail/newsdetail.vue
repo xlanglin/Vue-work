@@ -3,39 +3,51 @@
     <div class="banner">
       <h2>新聞資訊</h2>
     </div>
-    <div class="newsDetail">
-      <h2>《艾爾登法環》出貨突破1200萬，日本銷售破100萬</h2>
-      <div class="newsdate">2022. 03 . 10</div>
+    <div class="newsDetail" v-if="detail">
+      <h2>{{detail.name}}</h2>
+      <div class="newsdate">{{detail.date}}</div>
       <div class="newsimg">
         <el-image
           style="max-width: 100%; height: 500px"
-          src="https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/D8mYIXWja8knuqYlwqcqVpi1.jpg"
+          :src="detail.images"
           :fit="fit"
         ></el-image>
       </div>
       <p class="newsContent">
-        《艾爾登法環》在上市一週後就創造同時線上人數突破89萬、銷量超過500萬套的驚人紀錄，宮崎英高滿滿的「善意」近期更是佔據遊戲圈所有版面。今日(3月16日)，萬代南夢宮娛樂宣布《艾爾登法環》上市不到一個月於全球銷量就累計突破1200萬套，日本國內銷量也累計超過100萬套，再次創造歷史。
+        {{detail.intro}}
       </p>
       <p class="newsContent">
-        今日，官方也公布了遊戲總監宮崎英高的賀詞，「有這麼多人遊玩本作，讓我非常驚喜，在此僅代表製作團隊，向所有玩家致上最高的謝意。希望各位玩家可以在自喬治‧R.R‧馬丁的神話而生的廣大世界裡，享受自由度極高且滿佈威脅的冒險旅程。今後也請大家繼續支持《艾爾登法環》。」
+        {{detail.intro2}}
       </p>
     </div>
   </div>
 </template>
 
 <script>
+import news1 from '@/database/news1'
+import news2 from '@/database/news2'
+import news3 from '@/database/news3'
+import news4 from '@/database/news4'
+const newMaps ={
+  1: news1,
+  2: news2,
+  3: news3,
+  4: news4,
+}
 export default {
   name: "newsdetail",
-  mounted() {},
+  mounted() {
+    this.id = this.$router.history.current.params.id;
+    this.detail = newMaps[this.id]
+  },
   data() {
     return {
-      detail: {},
+      detail: undefined,
+      id: "",
     };
   },
-  methods: {
-    getID() {},
-  },
-};
+  
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
